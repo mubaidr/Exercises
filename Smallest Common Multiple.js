@@ -4,20 +4,16 @@ function smallestCommons (arr) {
   var min = Math.min.apply(null, arr)
 
   for (var i = max; ; i += max) {
-    for (var j = min; j <= max; j++) {
-      if (i % j !== 0) {
-        break
-      }
+    for (var j = min; j < max; j++) {
+      if (i % j !== 0) break
     }
-    if (i % j === 0) {
+    if (j === max) {
       lcm = i
       break
     }
   }
 
-  console.log(lcm)
-
   return lcm
 }
 
-smallestCommons([23, 18])
+smallestCommons([18, 23])
