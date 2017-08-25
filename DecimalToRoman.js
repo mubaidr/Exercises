@@ -1,17 +1,9 @@
 function convertToRoman (num) {
-  var decimal = [1000, 500, 100, 50, 10, 5, 1]
-  var roman = ['M', 'D', 'C', 'L', 'X', 'V', 'I']
+  var decimal = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+  var roman = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
   var result = ''
 
   decimal.forEach(function (value, index) {
-    if (num >= value) {
-      var diff = num - value
-      var RomanDiff = decimal[index - 1] - decimal[index]
-      console.log(num, value, diff, RomanDiff)
-      if (diff > RomanDiff) {
-        console.log(num, value, diff, RomanDiff)
-      }
-    }
     while (num >= value) {
       num -= value
       result += roman[index]
@@ -21,4 +13,4 @@ function convertToRoman (num) {
   return result
 }
 
-console.log(convertToRoman(39))
+convertToRoman(3999)
